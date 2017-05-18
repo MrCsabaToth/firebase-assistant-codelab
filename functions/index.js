@@ -148,14 +148,14 @@ Okay, my first question is: ${snap.val().q}
        const g_promise = graph.child(guess).once('value');
        Promise.all([q_promise, g_promise]).then(results => {
            const q_snap = results[0];
-           const g_snap = results[1];
+          //  const g_snap = results[1];
 
            // TODO codelab-1: set the proper contexts to learn the differentiation
           //  const speech = `I don't know how to tell a ${new_thing} from a ${g_snap.val().a}!`;
           //  assistant.ask(speech);
 
             const speech = `
-            I need to know how to tell a ${new_thing} from a ${g_snap.val().a} using a yes-no question.
+            I need to know how to tell a ${new_thing} from a ${q_snap.val().a} using a yes-no question.
             The answer must be "yes" for ${new_thing}. What question should I use?
             `;
 
